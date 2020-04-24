@@ -12,10 +12,16 @@
     <modules>
         <module>hello-app</module>
         <module>hello-service</module>
+        <module>hello-starter</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>2.2.6.RELEASE</version>
+            </dependency>
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>org.example.hello-service</artifactId>
@@ -26,7 +32,22 @@
                 <artifactId>org.example.hello-app</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>org.example.hello-starter</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

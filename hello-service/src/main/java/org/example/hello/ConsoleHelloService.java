@@ -1,3 +1,5 @@
+package org.example.hello;
+
 public class ConsoleHelloService implements HelloService {
     private final String prefix;
     private final String suffix;

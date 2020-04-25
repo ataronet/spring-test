@@ -27,6 +27,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <version>1.5.2.RELEASE</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>

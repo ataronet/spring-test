@@ -4,7 +4,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("hello") //section in the application.yml
 public class HelloProperties {
-    // set the defaults
+    /**
+     * Configuration of the hello service, with defaults
+     */
     private String prefix = "Hello";
     private String suffix = "!";
 

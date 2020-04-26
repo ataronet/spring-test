@@ -1,4 +1,4 @@
 #this configuration will kick in when there is no bean provided
 hello:
   prefix: Hi
-  suffix: \?
+  suffix: "?"

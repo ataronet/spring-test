@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class HelloAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
+    @Conditional(OnValidHelloPrefixCondition.class) // attach your own conditional class
     public HelloService helloService(HelloProperties helloProperties){
         return new ConsoleHelloService(
                 helloProperties.getPrefix(),

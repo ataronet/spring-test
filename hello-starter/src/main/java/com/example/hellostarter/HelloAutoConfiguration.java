@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class HelloAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
-    @Conditional(OnValidHelloPrefixCondition.class) // attach your own conditional class
+    @ConditionalOnValidHelloPrefix
     public HelloService helloService(HelloProperties helloProperties){
         return new ConsoleHelloService(
                 helloProperties.getPrefix(),

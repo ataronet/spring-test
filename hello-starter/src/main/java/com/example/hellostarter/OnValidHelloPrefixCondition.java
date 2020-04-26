@@ -8,13 +8,13 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 // Write your own conditional class
-public class OnValidHelloPrefixCondition extends SpringBootCondition {
+class OnValidHelloPrefixCondition extends SpringBootCondition {
     private static final String PROPERTY_NAME = "hello.prefix";
 
     @Override
     public ConditionOutcome getMatchOutcome(ConditionContext context, AnnotatedTypeMetadata metadata) {
         Environment environment = context.getEnvironment();
-        ConditionMessage.Builder condition = ConditionMessage.forCondition("ValidHelloPrefix");
+        ConditionMessage.Builder condition = ConditionMessage.forCondition(ConditionalOnValidHelloPrefix.class);
         if (environment.containsProperty(PROPERTY_NAME)) {
             String value = environment.getProperty(PROPERTY_NAME);
             if(value != null && !value.isEmpty() && Character.isUpperCase(value.charAt(0))){
